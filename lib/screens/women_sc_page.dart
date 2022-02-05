@@ -18,7 +18,7 @@ class _WomenSCPageState extends State<WomenSCPage> {
   @override
   void initState() {
     super.initState();
-    getWomenLocal().then((val) {
+    getWomen().then((val) {
       setState(() {
         womenList = val;
       });
@@ -28,7 +28,7 @@ class _WomenSCPageState extends State<WomenSCPage> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-        future: getWomenLocal(),
+        future: getWomen(),
         builder: (ctx, snapshot) {
           if (snapshot.hasData) {
             return Scaffold(
