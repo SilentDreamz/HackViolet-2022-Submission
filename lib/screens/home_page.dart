@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const InfoDump()));
+                Navigator.of(context).pushNamed('/womensc');
               },
               child: const Text("Women in Science"),
             ),

@@ -2,15 +2,18 @@
   "women": [
     {
       "name": "Grace Hopper",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus interdum imperdiet tellus, sed maximus mauris auctor at. Aliquam tincidunt ligula sed nunc porttitor, eu suscipit ipsum convallis. Proin lorem nunc, fringilla dictum mattis vitae, bibendum id dui. Maecenas volutpat, mi quis sodales laoreet, magna mi maximus turpis, id venenatis ipsum justo quis est. Curabitur rhoncus tempor nunc et congue."
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus interdum imperdiet tellus, sed maximus mauris auctor at. Aliquam tincidunt ligula sed nunc porttitor, eu suscipit ipsum convallis. Proin lorem nunc, fringilla dictum mattis vitae, bibendum id dui. Maecenas volutpat, mi quis sodales laoreet, magna mi maximus turpis, id venenatis ipsum justo quis est. Curabitur rhoncus tempor nunc et congue.",
+      "imageUrl": "https://cdn.mos.cms.futurecdn.net/tasfxMwpQ9ChXLtqtuArBb.jpg"
     },
     {
       "name": "Hop Gracer",
-      "description": "Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla sollicitudin diam sed odio congue dapibus. Duis in semper massa, vel dictum diam. Sed orci leo, interdum vitae ligula luctus, condimentum cursus sem. Phasellus et efficitur ex, ac dictum erat. Duis gravida sed nisl id accumsan."
+      "description": "Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla sollicitudin diam sed odio congue dapibus. Duis in semper massa, vel dictum diam. Sed orci leo, interdum vitae ligula luctus, condimentum cursus sem. Phasellus et efficitur ex, ac dictum erat. Duis gravida sed nisl id accumsan.",
+      "imageUrl": "https://cdn.mos.cms.futurecdn.net/tasfxMwpQ9ChXLtqtuArBb.jpg"
     },
     {
       "name": "Gopper Hace",
-      "description": "Quisque varius lorem eget elit pharetra, non ultricies justo finibus. Suspendisse faucibus lorem lectus, vel bibendum arcu volutpat in. Phasellus massa dui, efficitur nec dapibus in, sagittis bibendum risus."
+      "description": "Quisque varius lorem eget elit pharetra, non ultricies justo finibus. Suspendisse faucibus lorem lectus, vel bibendum arcu volutpat in. Phasellus massa dui, efficitur nec dapibus in, sagittis bibendum risus.",
+      "imageUrl": "https://cdn.mos.cms.futurecdn.net/tasfxMwpQ9ChXLtqtuArBb.jpg"
     }
   ]
 }
