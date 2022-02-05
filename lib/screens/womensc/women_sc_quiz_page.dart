@@ -14,40 +14,50 @@ class WomenSCQuizPage extends StatelessWidget {
   }
 
   // make sure backing goes back to menu page
+  void onBackEvent(ctx) {
+    Navigator.popUntil(ctx, ModalRoute.withName('/womensc'));
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(data.name),
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            Container(
-              width: 200,
-              height: 40,
-              decoration: BoxDecoration(
-                  color: const Color.fromRGBO(13, 71, 161, 1),
-                  borderRadius: BorderRadius.circular(16.0)),
-              child: Text(data.question),
-            ),
-            ElevatedButton(
-                onPressed: () {
-                  checkAnswerAndPush(data.ans1, context);
-                },
-                child: Text(data.ans1)),
-            ElevatedButton(
-                onPressed: () {
-                  checkAnswerAndPush(data.ans2, context);
-                },
-                child: Text(data.ans2)),
-            ElevatedButton(
-                onPressed: () {
-                  checkAnswerAndPush(data.ans3, context);
-                },
-                child: Text(data.ans3)),
-          ],
+    return WillPopScope(
+      onWillPop: () async {
+        // TODO might need to revisit this
+        onBackEvent(context);
+        return false;
+      },
+      child: Scaffold(
+        // appBar: AppBar(
+        //   title: Text(data.name),
+        // ),
+        body: Center(
+          child: Column(
+            children: [
+              Container(
+                width: 200,
+                height: 40,
+                decoration: BoxDecoration(
+                    color: const Color.fromRGBO(13, 71, 161, 1),
+                    borderRadius: BorderRadius.circular(16.0)),
+                child: Text(data.question),
+              ),
+              ElevatedButton(
+                  onPressed: () {
+                    checkAnswerAndPush(data.ans1, context);
+                  },
+                  child: Text(data.ans1)),
+              ElevatedButton(
+                  onPressed: () {
+                    checkAnswerAndPush(data.ans2, context);
+                  },
+                  child: Text(data.ans2)),
+              ElevatedButton(
+                  onPressed: () {
+                    checkAnswerAndPush(data.ans3, context);
+                  },
+                  child: Text(data.ans3)),
+            ],
+          ),
         ),
       ),
     );
