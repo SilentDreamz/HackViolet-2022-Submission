@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'info_dump.dart';
 
 class HomePage extends StatelessWidget {
   final String title = "HackViolet 2022 Submission";
@@ -19,7 +20,9 @@ class HomePage extends StatelessWidget {
               height: 30,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const InfoDump()));
+              },
               child: const Text("Women in Science"),
             ),
             const SizedBox(
