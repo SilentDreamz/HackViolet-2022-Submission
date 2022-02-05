@@ -15,6 +15,6 @@ class Concept {
     final definition = data['definition'] as String;
     final example = data['example'] as String;
 
-    return Concept(name: name, definition: definition, example: example);
+    return Concept(name, definition, example);
   }
 }
