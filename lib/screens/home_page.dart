@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'concept_quiz.dart';
 import 'info_dump.dart';
 
 class HomePage extends StatelessWidget {
@@ -21,7 +22,8 @@ class HomePage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const InfoDump()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const InfoDump()));
               },
               child: const Text("Women in Science"),
             ),
@@ -29,7 +31,10 @@ class HomePage extends StatelessWidget {
               height: 30,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CSConcepts()));
+              },
               child: const Text("CS Concepts"),
             ),
           ],
