@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:hackviolet_submission/classes/women_sc.dart';
+import 'package:hackviolet_submission/models/women_sc.dart';
 import 'package:http/http.dart' as http;
 import 'package:hackviolet_submission/datafetcher.dart';
 
@@ -63,11 +63,32 @@ class _WomenSCPageState extends State<WomenSCPage> {
                 title: Text('Women In Science'),
               ),
               body: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    for (var i in womenList) Text(i.name),
-                  ],
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      for (var i in womenList)
+                        Column(
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                //workwithOnTaprequest
+                              },
+                              child: ClipRRect(
+                                child: Image.network(
+                                  i.imageUrl,
+                                  width: 400,
+                                ),
+                              ),
+                            ),
+                            Text(i.name),
+                            const SizedBox(
+                              height: 30,
+                            ),
+                          ],
+                        ),
+                    ],
+                  ),
                 ),
               ),
             );
