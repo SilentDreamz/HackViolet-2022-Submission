@@ -45,7 +45,13 @@ class WomenSCAnswerPage extends StatelessWidget {
               correct
                   ? const Text("Correct!", style: const TextStyle(fontSize: 50))
                   : const Text('Wrong!', style: const TextStyle(fontSize: 50)),
+              const SizedBox(
+                height: 70,
+              ),
               Text(data.explanation, style: const TextStyle(fontSize: 40)),
+              const SizedBox(
+                height: 50,
+              ),
               ElevatedButton(
                 onPressed: () {
                   if (quesIndex + 1 != wholeData.length) {

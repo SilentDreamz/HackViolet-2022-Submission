@@ -81,7 +81,12 @@ class _WomenSCPageState extends State<WomenSCPage> {
                                   ),
                                 ),
                               ),
-                              Text(i.name),
+                              Text(
+                                i.name,
+                                style: TextStyle(
+                                  fontSize: 30,
+                                ),
+                              ),
                               const SizedBox(
                                 height: 30,
                               ),
