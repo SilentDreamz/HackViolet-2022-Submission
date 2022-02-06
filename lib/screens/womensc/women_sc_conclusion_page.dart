@@ -14,19 +14,25 @@ class WomenSCConclusionPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return WillPopScope(
       child: Scaffold(
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(conclusion, style: const TextStyle(fontSize: 40)),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/womensc');
-                  },
-                  child:
-                      const Text("BACK", style: const TextStyle(fontSize: 40))),
-            ],
+        body: Container(
+          constraints: BoxConstraints(maxWidth: 1500),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(conclusion, style: const TextStyle(fontSize: 40)),
+                const SizedBox(
+                  height: 40,
+                ),
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/womensc');
+                    },
+                    child: const Text("BACK",
+                        style: const TextStyle(fontSize: 40))),
+              ],
+            ),
           ),
         ),
       ),

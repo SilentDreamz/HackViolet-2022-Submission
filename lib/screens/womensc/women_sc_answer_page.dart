@@ -38,44 +38,50 @@ class WomenSCAnswerPage extends StatelessWidget {
             ? const Color.fromRGBO(0, 200, 81, 1)
             : const Color.fromRGBO(255, 68, 68, 1),
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              correct
-                  ? const Text("Correct!", style: const TextStyle(fontSize: 50))
-                  : const Text('Wrong!', style: const TextStyle(fontSize: 50)),
-              const SizedBox(
-                height: 70,
-              ),
-              Text(data.explanation, style: const TextStyle(fontSize: 40)),
-              const SizedBox(
-                height: 50,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  if (quesIndex + 1 != wholeData.length) {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => WomenSCQuizPage(
-                                  data: wholeData[quesIndex + 1],
-                                  quesIndex: quesIndex + 1,
-                                  wholeData: wholeData,
-                                  conclusion: conclusion,
-                                )));
-                  } else {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => WomenSCConclusionPage(
-                                  conclusion: conclusion,
-                                )));
-                  }
-                },
-                child: const Text("NEXT", style: const TextStyle(fontSize: 40)),
-              ),
-            ],
+          child: Container(
+            constraints: BoxConstraints(maxWidth: 850),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                correct
+                    ? const Text("Correct!",
+                        style: const TextStyle(fontSize: 50))
+                    : const Text('Wrong!',
+                        style: const TextStyle(fontSize: 50)),
+                const SizedBox(
+                  height: 70,
+                ),
+                Text(data.explanation, style: const TextStyle(fontSize: 40)),
+                const SizedBox(
+                  height: 50,
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    if (quesIndex + 1 != wholeData.length) {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => WomenSCQuizPage(
+                                    data: wholeData[quesIndex + 1],
+                                    quesIndex: quesIndex + 1,
+                                    wholeData: wholeData,
+                                    conclusion: conclusion,
+                                  )));
+                    } else {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => WomenSCConclusionPage(
+                                    conclusion: conclusion,
+                                  )));
+                    }
+                  },
+                  child:
+                      const Text("NEXT", style: const TextStyle(fontSize: 40)),
+                ),
+              ],
+            ),
           ),
         ),
       ),

@@ -98,35 +98,42 @@ class _WomenSCQuizPageState extends State<WomenSCQuizPage> {
                                   fontSize: 50),
                             ),
                           ),
-                          const SizedBox(
-                            height: 70,
-                          ),
-                          ElevatedButton(
-                              onPressed: () {
-                                checkAnswerAndPush(localMCQ[0], context);
-                              },
-                              child: Text(localMCQ[0],
-                                  style: const TextStyle(fontSize: 40))),
-                          const SizedBox(
-                            height: 50,
-                          ),
-                          ElevatedButton(
-                              onPressed: () {
-                                checkAnswerAndPush(localMCQ[1], context);
-                              },
-                              child: Text(localMCQ[1],
-                                  style: const TextStyle(fontSize: 40))),
-                          const SizedBox(
-                            height: 50,
-                          ),
-                          ElevatedButton(
-                              onPressed: () {
-                                checkAnswerAndPush(localMCQ[2], context);
-                              },
-                              child: Text(localMCQ[2],
-                                  style: const TextStyle(fontSize: 40))),
-                          const SizedBox(
-                            height: 50,
+                          Container(
+                            constraints: BoxConstraints(maxWidth: 850),
+                            child: Column(
+                              children: [
+                                const SizedBox(
+                                  height: 70,
+                                ),
+                                ElevatedButton(
+                                    onPressed: () {
+                                      checkAnswerAndPush(localMCQ[0], context);
+                                    },
+                                    child: Text(localMCQ[0],
+                                        style: const TextStyle(fontSize: 40))),
+                                const SizedBox(
+                                  height: 50,
+                                ),
+                                ElevatedButton(
+                                    onPressed: () {
+                                      checkAnswerAndPush(localMCQ[1], context);
+                                    },
+                                    child: Text(localMCQ[1],
+                                        style: const TextStyle(fontSize: 40))),
+                                const SizedBox(
+                                  height: 50,
+                                ),
+                                ElevatedButton(
+                                    onPressed: () {
+                                      checkAnswerAndPush(localMCQ[2], context);
+                                    },
+                                    child: Text(localMCQ[2],
+                                        style: const TextStyle(fontSize: 40))),
+                                const SizedBox(
+                                  height: 50,
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
