@@ -1,4 +1,5 @@
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'models/women_sc.dart';
@@ -24,12 +25,13 @@ Future<Map<String, List<Concept>>> getConceptsLocal() async {
   final data = await readJson();
   Map<String, List<Concept>> concepts = {};
   for (var entry in data['concepts'].entries) {
-    concepts[entry.key as String] = (entry.value as List).map((q) => Concept.fromJson(q)).toList();
+    concepts[entry.key as String] =
+        (entry.value as List).map((q) => Concept.fromJson(q)).toList();
   }
   return concepts;
 }
 
-const apiURL = '';
+String apiURL = dotenv.env['API_URL'] ?? "?????";
 const apiPath = 'HackvioletData';
 
 Future<List<WomenSC>> getWomen() async {
@@ -50,7 +52,8 @@ Future<Map<String, List<Concept>>> getConcepts() async {
     Map<String, List<Concept>> concepts = {};
     var data = jsonDecode(resp.body);
     for (var entry in data['concepts'].entries) {
-      concepts[entry.key as String] = (entry.value as List).map((q) => Concept.fromJson(q)).toList();
+      concepts[entry.key as String] =
+          (entry.value as List).map((q) => Concept.fromJson(q)).toList();
     }
     return concepts;
   } else {
