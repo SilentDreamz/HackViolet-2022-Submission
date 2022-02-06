@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hackviolet_submission/datafetcher.dart';
 import 'package:hackviolet_submission/models/concepts.dart';
 
 class CSConcepts extends StatefulWidget {
@@ -8,6 +9,17 @@ class CSConcepts extends StatefulWidget {
 }
 
 class _CSConceptsState extends State<CSConcepts> {
+  late Map<String, dynamic> concepts;
+
+  @override
+  void initState() {
+    super.initState();
+    getConceptsLocal().then((val) {
+      setState(() {
+        concepts = val;
+      });
+    });
+  }
 //  List<String> concepts = [
 //    'Data Types',
 //    'Conditional Statements',
@@ -15,27 +27,27 @@ class _CSConceptsState extends State<CSConcepts> {
 //    'Functions'
 //  ];
 // Dummy data
-  Map<String, dynamic> concepts = {
-    'Data Types': [
-      new Concept.withoutChildren('Integer', 'Int is 3', 'Eg: int x = 3;'),
-      new Concept.withoutChildren(
-          'String', 'String is "s"', 'Eg: string x = "a";'),
-      new Concept.withoutChildren(
-          'Char', 'char is \'s\'', 'Eg: char x = \'s\';')
-    ],
-    'Conditional Statements ': [
-      new Concept.withoutChildren(
-          'if-else statement', 'if is if', 'Eg: if(mind == smart) print name;'),
-    ],
-    'Loops ': [
-      new Concept.withoutChildren('For loop', 'for is for',
-          'Eg: for(var i = 0; i < 10; i++) print name;'),
-      new Concept.withoutChildren(
-          'While loop', 'for is for', 'Eg: while(i < 10) print name;'),
-      new Concept.withoutChildren(
-          'Do While loop', 'for is for', 'Eg: do{ print name;}while(i < 10);'),
-    ]
-  };
+//  Map<String, dynamic> concepts = {
+//    'Data Types': [
+//      new Concept.withoutChildren('Integer', 'Int is 3', 'Eg: int x = 3;'),
+//      new Concept.withoutChildren(
+//          'String', 'String is "s"', 'Eg: string x = "a";'),
+//      new Concept.withoutChildren(
+//          'Char', 'char is \'s\'', 'Eg: char x = \'s\';')
+//    ],
+//    'Conditional Statements ': [
+//      new Concept.withoutChildren(
+//          'if-else statement', 'if is if', 'Eg: if(mind == smart) print name;'),
+//    ],
+//    'Loops ': [
+//      new Concept.withoutChildren('For loop', 'for is for',
+//          'Eg: for(var i = 0; i < 10; i++) print name;'),
+//      new Concept.withoutChildren(
+//          'While loop', 'for is for', 'Eg: while(i < 10) print name;'),
+//      new Concept.withoutChildren(
+//          'Do While loop', 'for is for', 'Eg: do{ print name;}while(i < 10);'),
+//    ]
+//  };
 
   @override
   Widget build(BuildContext context) {
@@ -43,37 +55,61 @@ class _CSConceptsState extends State<CSConcepts> {
       appBar: AppBar(
         title: Text('Learn CS Concepts'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Expanded(
-            child: ListView.builder(
+      body: FutureBuilder(
+          future: getConceptsLocal(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                    child: ListView.builder(
 //              shrinkWrap: true,
-              itemCount: concepts.keys.length,
-              itemBuilder: (context, index) {
-                String key = concepts.keys.elementAt(index);
+                      itemCount: concepts.keys.length,
+                      itemBuilder: (context, index) {
+                        String key = concepts.keys.elementAt(index);
 
-                return ListTile(
-                  title: Center(
-                    child: ElevatedButton(
-                      child: Text(key),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ConceptQuiz(
-                                      title: key,
-                                      concepts: concepts[key],
-                                    )));
+                        return ListTile(
+                          title: Center(
+                            child: ElevatedButton(
+                              child: Text(key),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => ConceptQuiz(
+                                              title: key,
+                                              concepts: concepts[key],
+                                            )));
+                              },
+                            ),
+                          ),
+                        );
                       },
                     ),
-                  ),
-                );
-              },
-            ),
-          )
-        ],
-      ),
+                  )
+                ],
+              );
+            } else if (snapshot.hasError) {
+              return Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Error: ${snapshot.error}'),
+                  ],
+                ),
+              );
+            } else {
+              return Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Text("Loading data..."),
+                  ],
+                ),
+              );
+            }
+          }),
     );
   }
 }
