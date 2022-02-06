@@ -1,0 +1,77 @@
+[
+    {
+        "name": "Grace Hopper",
+        "imageUrl": "https://cdn.mos.cms.futurecdn.net/tasfxMwpQ9ChXLtqtuArBb.jpg",
+        "quiz": [
+          {
+            "question": "Who is Grace Hopper?",
+            "correct": "Officer from the Second World War known as the 'Mother of Cobol'",
+            "wrong": ["A mathmatician that created calculations for NASA", "A religious nun and educator", "An electrical enginneer and transgender activist"],
+            "description": "A rear admiral in the U.S. navy who helped devise UNIVAC 1 and naval applications for COBOL. She helped create Mark 1 which was the first automatic precursor to the calculator and the first computer manual called A Manual of Operation for the Automatic Sequence Controlled Calculator (1946) for Mark 1."
+          },
+          {
+            "question": "What is Grace Hopper known for?",
+            "correct": "Helping build COBOL and the first compiler",
+            "wrong": ["Created the first personal computer", "Developing secret communications that prevented the Nazis from intercepting the messages", "Program for the first artificial satellite"],
+            "description": "Sometime in 1949 Hopper joined Eckert-Mauchly Computer Corp., where she designed one of the first compilers and coined the term 'compiler.' In 1959, she participated in the CODASYL consortium, which consulted Hopper to guide them in creating a machine-independent programming language. This has then led to the creaton of the COBOL language, beacuse of her idea of a language being based on English words. "
+          },
+          {
+            "question": "What was the name of the first compiler?",
+            "correct": "A-0",
+            "wrong": ["UNIVAC 1", "F-1", "GCC GNAT"],
+            "description": "While working foe the Remington Rand corporation she created her first originial compiler whose first version was A-0. Beforehand though her idea of the compiler was not accepted and she instead wrote a paper on the subject at hand."
+          }
+        ],
+        "conclusion": "Posthumously awarded the Presidential Medal of Freedom, Grace Hopper's contributions to the field of Computer Science will be forever remembered through the Grace Hopper Celebration of Women in Computing."
+      },
+      {
+        "name": "Elizabeth J. Feinler",
+        "imageUrl": "https://cdn.facesofopensource.com/wp-content/uploads/2018/12/29133653/elizabethfeinler.CF032507.web_.jpg",
+        "quiz": [
+          {
+            "question": "Who is Elizabeth J. Feinler?",
+            "correct": "Director of the Network Information Systems Center at the Stanford Research Institute",
+            "wrong": ["A musician and teacher", "A professor at Harvard University who specialized in defense", "A Navy seal who turned rogue"],
+            "description": "Elizabeth J. Feinler was an American information scientist who was also the director of the Network Information Systems Center at the Stanford Resaerch Institute. She is now inducted into the Internet Hall of Fame and lives at 90 years old according to some sources."
+          },
+          {
+            "question": "What is Elizabeth J. Feinler known for?",
+            "correct": "The maker of ARPANET",
+            "wrong": ["Created the first onboard flight software for NASA's Apollo program", "Creator of the first algorithm", "First women in the Manhatten Project"],
+            "description": "The Advanced Research Projects Agency (ARPA), which was part of the U.S. Defense Department funded the project called Advanced Research Projects Agency Network (ARPANET) in the late 1960s. The purpose for this intially was to link computers at funded Pentagon research institutions over telephone lines during the Cold War."
+          },
+          {
+            "question": "What is ARPANET also know as?",
+            "correct": "The first Internet",
+            "wrong": ["The first programming langauge", "The first integrated development environment", "The first computer"],
+            "description": "The first working prototype of the Internet came with the creation of ARPANET. This used packet switching which allowed multiple computers to communicat eon a single network."
+          }
+        ],
+        "conclusion": "Elizabeth J. Feinler, the used to be Director of the Network Information Systems Center at the Stanford Research Institute, created ARPANET for the Adb=vanced Research Projects Agency (ARPA) which was part of the U.S. Department of Defense. ARPANET became the first prototype model of the INternet as it was able to connect multiple computers together and later the idea was expanded upon by later inventors and scientists to create what we know call the Internet today. Because of her research, in 2012 she was inducted into the INternet Hall of Fame by trh Internet Society. She wil be forever remembered in the hall of fame for being the one to create the first 'Internet' of its time"
+      },
+      {
+        "name": "Anita Borg",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/Anita_Borg.jpg/220px-Anita_Borg.jpg",
+        "quiz": [
+          {
+            "question": "Who is Anita Borg?",
+            "correct": "A passionate person who advocated of greater representation for technical women especially in computing",
+            "wrong": ["A pianist tired of her job", "Someone who was persecuted but became the second African-American person to get a PHD in Mathmatics", "Professor at Carnegie Mellon University"],
+            "description": "Anita Borg was a passionate women who advocated for women's rights and advocated to commit to raising the influence of wopmen in all apsects of technoology and increase the positive imapct that women have on technology."
+          },
+          {
+            "question": "What is Anita Borg known for?",
+            "correct": "Founded the Institute for Women and Technology and the Grace Hopper Celebration of Women in Computing",
+            "wrong": ["Pioneered the first dating app", "Created the notion of a specific engine could transition calculation to computation", "Having the first PC"],
+            "description":"Anita founded the nonprofit organization called Institute for Women and Technology (IWT). When Anita was later diagnosed with cancer, her friend named Telle steped in as a temporary CEO and following Anita's death, Telle renamed the organization to the Anita Borg Institite, in honor of her. "
+          },
+          {
+            "question": "What did she believe in regarding women?",
+            "correct": "All of them",
+            "wrong": ["To increase the representation of women in technical fields", "To enable the creation of more technology by women and build a large network of technical women", "To ensure that women’s voices played a role in shaping the future of technology"],
+            "description": "Anita believed that research of women with active roles in organizations of computing and othe rrelated fields increased innovation and had better bottom line results. Her organization aimed to increase representation of women in technical fields, enable the creation of more technology by women, build the pipeline of technical women, and ensure that women’s voices played a role in shaping the future of technology. "
+          }
+        ],
+        "conclusion": "In honor of Anita Borg, her friend Telle and now Brenda Darden Wilkerson, continue her legacy of extending global outreach to women that are considering and/or currently pursuing any technical careers in computing whether it is in-person or online. To take a chapter out of this, we should respect and also extend a helping hand of women and the diverse who wish to pursue a career or are pursuing a career in computing or even any STEM field in general."
+      }
+]
