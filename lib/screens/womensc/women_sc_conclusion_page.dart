@@ -19,12 +19,13 @@ class WomenSCConclusionPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(conclusion),
+              Text(conclusion, style: const TextStyle(fontSize: 40)),
               ElevatedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/womensc');
                   },
-                  child: const Text("BACK")),
+                  child:
+                      const Text("BACK", style: const TextStyle(fontSize: 40))),
             ],
           ),
         ),

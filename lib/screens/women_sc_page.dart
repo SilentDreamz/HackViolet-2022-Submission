@@ -28,75 +28,86 @@ class _WomenSCPageState extends State<WomenSCPage> {
     });
   }
 
+  void onBackEvent(ctx) {
+    Navigator.popUntil(ctx, ModalRoute.withName('/'));
+  }
+
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-        future: getWomenLocal(),
-        builder: (ctx, snapshot) {
-          if (snapshot.hasData) {
-            return Scaffold(
-              appBar: AppBar(
-                title: const Text('Women In Science'),
-              ),
-              body: Center(
-                child: SingleChildScrollView(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      for (var i in womenList)
-                        Column(
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                //workwithOnTaprequest
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => WomenSCQuizPage(
-                                              data:
-                                                  womenList[currIndex].quiz[0],
-                                              wholeData:
-                                                  womenList[currIndex].quiz,
-                                              quesIndex: 0,
-                                              conclusion: womenList[currIndex]
-                                                  .conclusion,
-                                            )));
+    return WillPopScope(
+      onWillPop: () async {
+        // TODO might need to revisit this
+        onBackEvent(context);
+        return false;
+      },
+      child: FutureBuilder(
+          future: getWomenLocal(),
+          builder: (ctx, snapshot) {
+            if (snapshot.hasData) {
+              return Scaffold(
+                appBar: AppBar(
+                  title: const Text('Women In Science'),
+                ),
+                body: Center(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        for (var i in womenList)
+                          Column(
+                            children: [
+                              InkWell(
+                                onTap: () {
+                                  //workwithOnTaprequest
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => WomenSCQuizPage(
+                                                data: womenList[currIndex]
+                                                    .quiz[0],
+                                                wholeData:
+                                                    womenList[currIndex].quiz,
+                                                quesIndex: 0,
+                                                conclusion: womenList[currIndex]
+                                                    .conclusion,
+                                              )));
 
-                                currIndex++;
-                              },
-                              child: ClipRRect(
-                                child: Image.network(
-                                  i.imageUrl,
-                                  width: 400,
+                                  currIndex++;
+                                },
+                                child: ClipRRect(
+                                  child: Image.network(
+                                    i.imageUrl,
+                                    width: 400,
+                                  ),
                                 ),
                               ),
-                            ),
-                            Text(i.name),
-                            const SizedBox(
-                              height: 30,
-                            ),
-                          ],
-                        ),
+                              Text(i.name),
+                              const SizedBox(
+                                height: 30,
+                              ),
+                            ],
+                          ),
+                      ],
+                    ),
+                  ),
+                ),
+              );
+            } else {
+              return Scaffold(
+                appBar: AppBar(
+                  title: Text('Women In Science'),
+                ),
+                body: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text("Loading data..."),
                     ],
                   ),
                 ),
-              ),
-            );
-          } else {
-            return Scaffold(
-              appBar: AppBar(
-                title: Text('Women In Science'),
-              ),
-              body: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Text("Loading data..."),
-                  ],
-                ),
-              ),
-            );
-          }
-        });
+              );
+            }
+          }),
+    );
   }
 }

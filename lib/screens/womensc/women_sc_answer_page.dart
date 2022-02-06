@@ -42,8 +42,10 @@ class WomenSCAnswerPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              correct ? const Text("Correct!") : const Text('Wrong!'),
-              Text(data.explanation),
+              correct
+                  ? const Text("Correct!", style: const TextStyle(fontSize: 50))
+                  : const Text('Wrong!', style: const TextStyle(fontSize: 50)),
+              Text(data.explanation, style: const TextStyle(fontSize: 40)),
               ElevatedButton(
                 onPressed: () {
                   if (quesIndex + 1 != wholeData.length) {
@@ -65,7 +67,7 @@ class WomenSCAnswerPage extends StatelessWidget {
                                 )));
                   }
                 },
-                child: const Text("NEXT"),
+                child: const Text("NEXT", style: const TextStyle(fontSize: 40)),
               ),
             ],
           ),
