@@ -14,9 +14,8 @@ Future<dynamic> readJson() async {
 
 Future<List<WomenSC>> getWomenLocal() async {
   final data = await readJson();
-  List<WomenSC> women = (data['women'] as List)
-      .map((q) => WomenSC.fromJson(q))
-      .toList();
+  List<WomenSC> women =
+      (data['women'] as List).map((q) => WomenSC.fromJson(q)).toList();
   return women;
 }
 

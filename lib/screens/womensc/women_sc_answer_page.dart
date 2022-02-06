@@ -1,15 +1,76 @@
 import 'package:flutter/material.dart';
+import 'package:hackviolet_submission/models/women_sc.dart';
+import 'package:hackviolet_submission/models/women_sc_quiz.dart';
+import 'package:hackviolet_submission/screens/womensc/women_sc_conclusion_page.dart';
+import 'package:hackviolet_submission/screens/womensc/women_sc_quiz_page.dart';
 
-class WomenSCAnswer extends StatefulWidget {
-  WomenSCAnswer({Key? key}) : super(key: key);
+class WomenSCAnswerPage extends StatelessWidget {
+  const WomenSCAnswerPage(
+      {Key? key,
+      required this.data,
+      this.quesIndex = 0,
+      this.correct = false,
+      required this.wholeData,
+      required this.conclusion})
+      : super(key: key);
 
-  @override
-  State<WomenSCAnswer> createState() => _WomenSCAnswerState();
-}
+  final WomenSCQuiz data;
+  final int quesIndex;
+  final bool correct;
+  final List<WomenSCQuiz> wholeData;
+  final String conclusion;
 
-class _WomenSCAnswerState extends State<WomenSCAnswer> {
+  // make sure backing goes back to menu page
+  void onBackEvent(ctx) {
+    Navigator.popUntil(ctx, ModalRoute.withName('/womensc'));
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return WillPopScope(
+      onWillPop: () async {
+        // TODO might need to revisit this
+        onBackEvent(context);
+        return false;
+      },
+      child: Scaffold(
+        backgroundColor: correct
+            ? const Color.fromRGBO(0, 200, 81, 1)
+            : const Color.fromRGBO(255, 68, 68, 1),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              correct ? const Text("Correct!") : const Text('Wrong!'),
+              Text(data.explanation),
+              ElevatedButton(
+                onPressed: () {
+                  if (quesIndex + 1 != wholeData.length) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => WomenSCQuizPage(
+                                  data: wholeData[quesIndex + 1],
+                                  quesIndex: quesIndex + 1,
+                                  wholeData: wholeData,
+                                  conclusion: conclusion,
+                                )));
+                  } else {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => WomenSCConclusionPage(
+                                  conclusion: conclusion,
+                                )));
+                  }
+                },
+                child: const Text("NEXT"),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

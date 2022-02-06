@@ -3,6 +3,7 @@
     {
       "name": "Grace Hopper",
       "imageUrl": "https://cdn.mos.cms.futurecdn.net/tasfxMwpQ9ChXLtqtuArBb.jpg",
+      "conclusion": "sOMETHING",
       "quiz": [
         {
           "question": "Who is Grace Hopper?",
@@ -11,7 +12,8 @@
             "Wrong 1",
             "Wrong 2",
             "Wrong 3"
-          ]
+          ], 
+          "explanation": "Cause thats why"
         },
         {
           "question": "How is Grace Hopper?",
@@ -20,7 +22,8 @@
             "Wrong 1",
             "Wrong 2",
             "Wrong 3"
-          ]
+          ],
+          "explanation": "Cause thats why"
         },
         {
           "question": "When is Grace Hopper?",
@@ -29,13 +32,15 @@
             "Wrong 1",
             "Wrong 2",
             "Wrong 3"
-          ]
+          ],
+          "explanation": "Cause thats why"
         }
       ]
     },
     {
       "name": "Hop Gracer",
       "imageUrl": "https://cdn.mos.cms.futurecdn.net/tasfxMwpQ9ChXLtqtuArBb.jpg",
+      "conclusion": "sOMETHING",
       "quiz": [
         {
           "question": "Who is Grace Hopper?",
@@ -44,7 +49,8 @@
             "Wrong 1",
             "Wrong 2",
             "Wrong 3"
-          ]
+          ],
+          "explanation": "Cause thats why"
         },
         {
           "question": "How is Grace Hopper?",
@@ -53,7 +59,8 @@
             "Wrong 1",
             "Wrong 2",
             "Wrong 3"
-          ]
+          ],
+          "explanation": "Cause thats why"
         },
         {
           "question": "When is Grace Hopper?",
@@ -62,13 +69,15 @@
             "Wrong 1",
             "Wrong 2",
             "Wrong 3"
-          ]
+          ],
+          "explanation": "Cause thats why"
         }
       ]
     },
     {
       "name": "Gopper Hace",
       "imageUrl": "https://cdn.mos.cms.futurecdn.net/tasfxMwpQ9ChXLtqtuArBb.jpg",
+      "conclusion": "sOMETHING",
       "quiz": [
         {
           "question": "Who is Grace Hopper?",
@@ -77,7 +86,8 @@
             "Wrong 1",
             "Wrong 2",
             "Wrong 3"
-          ]
+          ],
+          "explanation": "Cause thats why"
         },
         {
           "question": "How is Grace Hopper?",
@@ -86,7 +96,8 @@
             "Wrong 1",
             "Wrong 2",
             "Wrong 3"
-          ]
+          ],
+          "explanation": "Cause thats why"
         },
         {
           "question": "When is Grace Hopper?",
@@ -95,7 +106,8 @@
             "Wrong 1",
             "Wrong 2",
             "Wrong 3"
-          ]
+          ],
+          "explanation": "Cause thats why"
         }
       ]
     }
