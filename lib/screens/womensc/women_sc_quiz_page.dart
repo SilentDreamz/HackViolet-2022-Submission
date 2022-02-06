@@ -47,7 +47,7 @@ class _WomenSCQuizPageState extends State<WomenSCQuizPage> {
 
   // TODO Functions to check answer correct or not, and then push to
   void checkAnswerAndPush(ans, ctx) {
-    Navigator.of(ctx).push(MaterialPageRoute(
+    Navigator.of(ctx).pushReplacement(MaterialPageRoute(
         builder: (context) => WomenSCAnswerPage(
               data: widget.data,
               quesIndex: widget.quesIndex,

@@ -49,7 +49,7 @@ class WomenSCAnswerPage extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   if (quesIndex + 1 != wholeData.length) {
-                    Navigator.push(
+                    Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
                             builder: (context) => WomenSCQuizPage(
@@ -59,7 +59,7 @@ class WomenSCAnswerPage extends StatelessWidget {
                                   conclusion: conclusion,
                                 )));
                   } else {
-                    Navigator.push(
+                    Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
                             builder: (context) => WomenSCConclusionPage(
