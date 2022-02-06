@@ -55,7 +55,7 @@ Future<Map<String, List<Concept>>> getConcepts() async {
       Map<String, List<Concept>> concepts = {};
       var data = jsonDecode(resp.body);
       print(data);
-      for (var entry in data['concepts'].entries) {
+      for (var entry in data.entries) {
         concepts[entry.key as String] =
             (entry.value as List).map((q) => Concept.fromJson(q)).toList();
       }

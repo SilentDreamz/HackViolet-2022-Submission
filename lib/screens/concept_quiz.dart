@@ -9,17 +9,6 @@ class CSConcepts extends StatefulWidget {
 }
 
 class _CSConceptsState extends State<CSConcepts> {
-  late Map<String, dynamic> concepts;
-
-  @override
-  void initState() {
-    super.initState();
-    getConceptsLocal().then((val) {
-      setState(() {
-        concepts = val;
-      });
-    });
-  }
 //  List<String> concepts = [
 //    'Data Types',
 //    'Conditional Statements',
@@ -49,6 +38,18 @@ class _CSConceptsState extends State<CSConcepts> {
 //    ]
 //  };
 
+  late Map<String, List<Concept>> concepts;
+
+  @override
+  void initState() {
+    super.initState();
+    getConcepts().then((val) {
+      setState(() {
+        concepts = val;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +57,7 @@ class _CSConceptsState extends State<CSConcepts> {
         title: Text('Learn CS Concepts'),
       ),
       body: FutureBuilder(
-          future: getConceptsLocal(),
+          future: getConcepts(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return Column(
@@ -79,7 +80,7 @@ class _CSConceptsState extends State<CSConcepts> {
                                     MaterialPageRoute(
                                         builder: (context) => ConceptQuiz(
                                               title: key,
-                                              concepts: concepts[key],
+                                              concepts: concepts[key] ?? [],
                                             )));
                               },
                             ),
@@ -145,9 +146,9 @@ class _ConceptQuizState extends State<ConceptQuiz> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: IntrinsicWidth(
-          stepWidth: 24,
+      body: Container(
+        padding: EdgeInsets.all(20),
+        child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -167,8 +168,11 @@ class _ConceptQuizState extends State<ConceptQuiz> {
               ),
               Container(
                   padding: EdgeInsets.all(20),
-                  child: Text(widget.concepts[_index].definition,
-                      style: TextStyle(color: Colors.white)),
+                  child: Text(
+                    widget.concepts[_index].definition,
+                    style: TextStyle(color: Colors.white, height: 1.5),
+                    textAlign: TextAlign.center,
+                  ),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(13),
                     color: const Color(0xFF343434),
@@ -178,8 +182,13 @@ class _ConceptQuizState extends State<ConceptQuiz> {
               ),
               Container(
                   padding: EdgeInsets.all(20),
-                  child: Text(widget.concepts[_index].example,
-                      style: TextStyle(color: const Color(0xFFFF8c00))),
+                  alignment: Alignment.center,
+                  child: Text(
+                    widget.concepts[_index].example,
+                    style:
+                        TextStyle(color: const Color(0xFFFF8c00), height: 1.5),
+//                    textAlign: TextAlign.center,
+                  ),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(13),
                     color: const Color(0xFF232323),

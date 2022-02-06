@@ -78,18 +78,41 @@
   ],
   "concepts": {
     "Data Types": [
-      {"name": "Integer", "definition": "An integer is", "example": "3, 5, 293, 12301, -123"},
-      {"name": "String", "definition": "A string is", "example": "'hello', 'how are you?'"},
-      {"name": "Float", "definition": "A float is", "example": "2.3, 5.234, -3.1415"},
-      {"name": "Char", "definition": "A char, or character, is", "example": "'c', 'a', '\n'"}
+      {"name": "Integer",
+        "definition": "An integer data type represents some range of mathematical integers. Integral data types may be of different sizes and may or may not be allowed to contain negative values. Integers are commonly represented in a computer as a group of binary digits (bits). The size of the grouping varies so the set of integer sizes available varies between different types of computers and different programming languages.",
+        "example": "3, 5, 293, 12301, -123"},
+      {"name": "String",
+        "definition": "A string is traditionally a sequence of characters, either as a literal constant or as some kind of variable.",
+        "example": "'Hello world!', 'Women in Science.', 'This is a string.'"},
+      {"name": "Float", "definition": "A floating-point or float is a variable type that is used to store floating-point number values. A floating-point number is one where the position of the decimal point can \"float\" rather than being in a fixed position within a number.",
+        "example": "2.3, 5.234, -3.1415"},
+      {"name": "Char",
+        "definition": "A character is a display unit of information equivalent to one alphabetic letter or symbol. This relies on the general definition of a character as a single unit of written speech.",
+        "example": "'c', '2', '?'"}
     ],
-    "Conditional Statements": [
-      {"name": "If-else statement", "definition": "An if statement", "example": "if (mind == smart):"}
+    "Conditions": [
+      {"name": "If-Then-Else statement",
+        "definition": "The IF statement is a simple control that tests whether a condition is true or false. The condition can include a variable, or be a variable. If the variable is an integer 2, it will be true, because any number that is not zero will be true. If the condition is true, then an action occurs. If the condition is false, take an alternate action",
+        "example": "if expression is true\n    action true\nelse\n    action false"},
+      {"name":  "Relational operator",
+      "definition": "A relational operator is a programming language construct or operator that tests or defines some kind of relation between two entities. These include numerical equality (e.g., 5 = 5) and inequalities (e.g., 4 ≥ 3).",
+      "example": "9 < 25\n9 < 3\n9 > 14\n9 <= 17\n9 >= 25\n9 == 13\n9 != 13\n9 !< 25\n9 <> 25"},
+      {
+        "name": "Case control structure",
+        "definition": "A case or switch statement is a type of selection control mechanism used to allow the value of a variable or expression to change the control flow of program execution via a multiway branch.",
+        "example": "if age > 0 and age <= to 17\n    display You can’t vote.\nelse if age is >= 18 and age <= 64\n    display You’re in your working years.\nelse\n    display You should be retired."
+      }
     ],
     "Loops": [
-      {"name": "For loop", "definition": "A for loop is", "example": "for (int i = 0; i < 10; i++)"},
-      {"name": "While loop", "definition": "A while loop is", "example": "while (i < 10)"},
-      {"name": "Do while loop", "definition": "A do-while loop is", "example": "do { print name } while (i < 10);"}
+      {"name": "For loop",
+        "definition": "A for loop is a control flow statement for specifying iteration, which allows code to be executed repeatedly. A for loop has two parts: a header specifying the iteration, and a body which is executed once per iteration. The header often declares an explicit loop counter or loop variable, which allows the body to know which iteration is being executed. For loops are typically used when the number of iterations is known before entering the loop. For loops can be thought of as shorthands for while loops which increment and test a loop variable.",
+        "example": "For counter = 0, counter < 5, counter += 1\n    Output \"I love ice cream!\""},
+      {"name": "While loop",
+        "definition": "A while loop is a control flow statement that allows code to be executed repeatedly based on a given Boolean condition. The while loop can be thought of as a repeating if statement.",
+        "example":  "counter = 0\nWhile counter < 5\n    Output \"I love ice cream!\"\n    counter += 1"},
+      {"name": "Do while loop",
+        "definition": "A do while loop is a control flow statement that executes a block of code at least once, and then repeatedly executes the block, or not, depending on a given boolean condition at the end of the block.",
+        "example": "loop_response = 'y'\nDo\n    Output \"What is your age? \"\n    Input user_age\n    Output \"What is your friend's age? \"\n    Input friend_age\n    Output \"Together your ages add up to: \"\n    Output user_age + friend_age\nWhile loop_response == 'y'"}
     ]
   }
 }
