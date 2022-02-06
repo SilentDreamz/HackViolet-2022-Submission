@@ -40,11 +40,12 @@ class _CSConceptsState extends State<CSConcepts> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Learn CS Concepts'),
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Text('Learn CS Concepts'),
-          SizedBox(height: 20),
           Expanded(
             child: ListView.builder(
 //              shrinkWrap: true,
@@ -61,6 +62,7 @@ class _CSConceptsState extends State<CSConcepts> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) => ConceptQuiz(
+                                      title: key,
                                       concepts: concepts[key],
                                     )));
                       },
@@ -77,9 +79,10 @@ class _CSConceptsState extends State<CSConcepts> {
 }
 
 class ConceptQuiz extends StatefulWidget {
-  ConceptQuiz({this.concepts = const []});
+  ConceptQuiz({this.concepts = const [], this.title = ""});
 
   final List<Concept> concepts;
+  final String title;
 
   @override
   _ConceptQuizState createState() => _ConceptQuizState();
@@ -103,6 +106,9 @@ class _ConceptQuizState extends State<ConceptQuiz> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
       body: Center(
         child: IntrinsicWidth(
           stepWidth: 24,
