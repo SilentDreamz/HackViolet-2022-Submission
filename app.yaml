@@ -1,5 +1,7 @@
-env: standard
-runtime: nodejs14
+runtime: python39
+
+includes:
+  - env_variables.yaml
 
 handlers:
   - url: /
