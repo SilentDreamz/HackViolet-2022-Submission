@@ -17,6 +17,6 @@ class WomenSCQuiz {
         question: json['question'],
         correct: json['correct'],
         wrong: wrong,
-        explanation: json['explanation']);
+        explanation: json['description']);
   }
 }

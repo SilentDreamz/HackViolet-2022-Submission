@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'dart:convert';
@@ -47,16 +49,23 @@ Future<List<WomenSC>> getWomen() async {
 }
 
 Future<Map<String, List<Concept>>> getConcepts() async {
-  final resp = await http.get(Uri.http(apiURL, apiPath, {'q': 'concepts'}));
-  if (resp.statusCode == 200) {
-    Map<String, List<Concept>> concepts = {};
-    var data = jsonDecode(resp.body);
-    for (var entry in data['concepts'].entries) {
-      concepts[entry.key as String] =
-          (entry.value as List).map((q) => Concept.fromJson(q)).toList();
+  try {
+    final resp = await http.get(Uri.http(apiURL, apiPath, {'q': 'concepts'}));
+    if (resp.statusCode == 200) {
+      Map<String, List<Concept>> concepts = {};
+      var data = jsonDecode(resp.body);
+      print(data);
+      for (var entry in data['concepts'].entries) {
+        concepts[entry.key as String] =
+            (entry.value as List).map((q) => Concept.fromJson(q)).toList();
+      }
+      return concepts;
+    } else {
+      throw Exception('Failed to load concepts');
     }
-    return concepts;
-  } else {
+  } on Exception catch (e) {
+    // TODO
+//    print(e);
     return {};
   }
 }

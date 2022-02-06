@@ -4,7 +4,7 @@ import 'package:hackviolet_submission/route_generator.dart';
 import 'package:hackviolet_submission/screens/home_page.dart';
 
 Future<void> main() async {
-  await dotenv.load();
+  await dotenv.load(fileName: '.env');
   runApp(const MyApp());
 }
 
