@@ -111,5 +111,21 @@
         }
       ]
     }
-  ]
+  ],
+  "concepts": {
+    "Data Types": [
+      {"name": "Integer", "definition": "An integer is", "example": "3, 5, 293, 12301, -123"},
+      {"name": "String", "definition": "A string is", "example": "'hello', 'how are you?'"},
+      {"name": "Float", "definition": "A float is", "example": "2.3, 5.234, -3.1415"},
+      {"name": "Char", "definition": "A char, or character, is", "example": "'c', 'a', '\n'"}
+    ],
+    "Conditional Statements": [
+      {"name": "If-else statement", "definition": "An if statement", "example": "if (mind == smart):"}
+    ],
+    "Loops": [
+      {"name": "For loop", "definition": "A for loop is", "example": "for (int i = 0; i < 10; i++)"},
+      {"name": "While loop", "definition": "A while loop is", "example": "while (i < 10)"},
+      {"name": "Do while loop", "definition": "A do-while loop is", "example": "do { print name } while (i < 10);"}
+    ]
+  }
 }
