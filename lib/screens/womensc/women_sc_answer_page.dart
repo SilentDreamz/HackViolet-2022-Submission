@@ -1,13 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:hackviolet_submission/models/women_sc.dart';
+import 'package:hackviolet_submission/models/women_sc_quiz.dart';
+import 'package:hackviolet_submission/screens/womensc/women_sc_conclusion_page.dart';
+import 'package:hackviolet_submission/screens/womensc/women_sc_quiz_page.dart';
 
 class WomenSCAnswerPage extends StatelessWidget {
   const WomenSCAnswerPage(
-      {Key? key, this.data, this.quesIndex = 0, this.correct = false})
+      {Key? key,
+      required this.data,
+      this.quesIndex = 0,
+      this.correct = false,
+      required this.wholeData,
+      required this.conclusion})
       : super(key: key);
 
-  final Data data;
+  final WomenSCQuiz data;
   final int quesIndex;
   final bool correct;
+  final List<WomenSCQuiz> wholeData;
+  final String conclusion;
 
   // make sure backing goes back to menu page
   void onBackEvent(ctx) {
@@ -28,18 +39,33 @@ class WomenSCAnswerPage extends StatelessWidget {
             : const Color.fromRGBO(255, 68, 68, 1),
         body: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(data),
+              correct ? const Text("Correct!") : const Text('Wrong!'),
+              Text(data.explanation),
               ElevatedButton(
                 onPressed: () {
-                  if (this.quesIndex + 1 != this.data.quiz.length) {
-                    Navigator.pushNamed(context, '/womenscquiz',
-                        arguments: {data, quesIndex + 1});
+                  if (quesIndex + 1 != wholeData.length) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => WomenSCQuizPage(
+                                  data: wholeData[quesIndex + 1],
+                                  quesIndex: quesIndex + 1,
+                                  wholeData: wholeData,
+                                  conclusion: conclusion,
+                                )));
+                  } else {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => WomenSCConclusionPage(
+                                  conclusion: conclusion,
+                                )));
                   }
-
-                  Navigator.pushNamed(context, '/womenscconclusion');
                 },
-                child: Text(data.ans3),
+                child: const Text("NEXT"),
               ),
             ],
           ),
